@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="864" height="92" viewBox="0 0 864 92">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 130px;
+        fill: #edebe5;
+        font-family: GoldenVarsity-Outline, "Golden Varsity";
+      }
+
+      .cls-2 {
+        font-variant: small-caps;
+      }
+    </style>
+  </defs>
+  <text id="Game_Selection" data-name="Game Selection" class="cls-1" x="-0.726" y="91.45">G<tspan class="cls-2">ame</tspan> S<tspan>election</tspan></text>
+</svg>
