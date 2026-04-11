@@ -12,7 +12,7 @@ export default function HomeScreen() {
   return (
     <ParallaxScrollView
       backgroundImage={require("../assets/images/app_background.svg")}
-      winzzLogo={!loading}
+      winzzLogo={false}
     >
       {loading ? (
         <View style={styles.loaderContainer}>
