@@ -7,7 +7,7 @@ import { Image } from "expo-image";
 const SportSelection = () => {
   const handlePress = (sport: string) => {
     if (sport === "badminton") {
-      router.push("./badmintonKickStart");
+      router.push("./TeamMembers");
     } 
     else {
       console.log(`${sport} coming soon`);

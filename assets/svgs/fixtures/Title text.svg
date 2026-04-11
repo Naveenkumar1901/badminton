@@ -1,0 +1,18 @@
+<svg id="Title_text" data-name="Title text" xmlns="http://www.w3.org/2000/svg" width="945" height="36" viewBox="0 0 945 36">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 50px;
+        fill: #edebe5;
+        font-family: GoldenVarsity-Outline, "Golden Varsity";
+      }
+
+      .cls-2 {
+        font-variant: small-caps;
+      }
+    </style>
+  </defs>
+  <text id="Fixtures" class="cls-1" x="0.274" y="35.45">F<tspan class="cls-2">ixtures</tspan></text>
+  <text id="Result" class="cls-1" x="351.274" y="35.45">R<tspan class="cls-2">esult</tspan></text>
+  <text id="Teams_Preview" data-name="Teams Preview" class="cls-1" x="623.274" y="35.45">T<tspan class="cls-2">eams</tspan> P<tspan>review</tspan></text>
+</svg>
