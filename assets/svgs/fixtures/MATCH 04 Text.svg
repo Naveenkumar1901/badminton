@@ -17,6 +17,7 @@
       <feBlend result="blend" in="SourceGraphic"/>
     </filter>
   </defs>
-  <text id="MATCH_04" data-name="MATCH 04" class="cls-1" x="-2.103" y="32.614">MATCH 04</text>
+  <text id="MATCH_04" data-name="MATCH 04" class="cls-1" text-anchor="middle" x="125" y="32.614">MATCH 04</text>
 </svg>
+
 

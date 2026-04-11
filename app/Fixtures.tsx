@@ -111,21 +111,24 @@ const Fixtures = () => {
             <ImageBackground source={require("../assets/svgs/fixtures/black background.svg")} style={styles.blackBg} resizeMode="stretch">
                 
                 {/* Tab Header Overlay */}
-                <View style={styles.tabHeader}>
-                    <TouchableOpacity onPress={() => setActiveTab("fixtures")} style={styles.tabButton}>
-                        <Text style={[styles.tabText, activeTab === "fixtures" && styles.activeTabText]}>FIXTURES</Text>
-                        {activeTab === "fixtures" && <View style={styles.activeIndicator} />}
-                    </TouchableOpacity>
-
-                    <TouchableOpacity onPress={() => setActiveTab("result")} style={styles.tabButton}>
-                        <Text style={[styles.tabText, activeTab === "result" && styles.activeTabText]}>RESULT</Text>
-                        {activeTab === "result" && <View style={styles.activeIndicator} />}
-                    </TouchableOpacity>
-
-                    <TouchableOpacity onPress={() => setActiveTab("pointTable")} style={styles.tabButton}>
-                        <Text style={[styles.tabText, activeTab === "pointTable" && styles.activeTabText]}>POINT TABLE</Text>
-                        {activeTab === "pointTable" && <View style={styles.activeIndicator} />}
-                    </TouchableOpacity>
+                <View style={[styles.tabHeader, { flexDirection: 'row' }]}>
+                    {["fixtures", "result", "pointTable"].map((tab) => (
+                      <TouchableOpacity 
+                        key={tab}
+                        onPress={() => setActiveTab(tab)} 
+                        style={[
+                          styles.tabButton, 
+                          activeTab === tab && styles.activeTabButton
+                        ]}
+                      >
+                        <Text style={[
+                          styles.tabText, 
+                          activeTab === tab && styles.activeTabText
+                        ]}>
+                          {tab === "pointTable" ? "POINT TABLE" : tab.toUpperCase()}
+                        </Text>
+                      </TouchableOpacity>
+                    ))}
                 </View>
 
                 {/* Tab Content */}
@@ -196,10 +199,35 @@ const styles = StyleSheet.create({
   },
   tabHeader: {
     position: "absolute",
-    top: -4,
+    top: -5,
     alignSelf: "center",
-    width: "95%",
-    height: 48,
+    width: "98%",
+    height: 40,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    paddingHorizontal: 5,
+  },
+  tabButton: {
+    paddingHorizontal: 15,
+    paddingVertical: 6,
+    borderRadius: 8,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  activeTabButton: {
+    backgroundColor: "rgba(152, 17, 18, 0.9)", // Darker red capsule
+    borderWidth: 1,
+    borderColor: "rgba(255, 255, 255, 0.2)",
+  },
+  tabText: {
+    color: "#edebe5",
+    fontSize: 13,
+    fontWeight: "700",
+    letterSpacing: 0.8,
+  },
+  activeTabText: {
+    color: "#ffffff",
   },
   titleTextFixture: {
     width: "100%",
@@ -214,12 +242,14 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   matchNoWrapper: {
+     width: "100%",
      alignItems: "center",
+     justifyContent: "center",
      marginBottom: 6,
   },
   matchNoText: {
-     width: 80,
-     height: 14,
+     width: 250,
+     height: 20,
   },
   card: {
     flexDirection: "row",
@@ -270,12 +300,14 @@ const styles = StyleSheet.create({
     // Slightly offset vertically if needed, but flex center handles it
   },
   vsWrapper: {
-     marginHorizontal: 15,
+     width: 50,
+     alignItems: "center",
+     justifyContent: "center",
      zIndex: 10,
   },
   vsLogo: {
-    width: 50,
-    height: 50,
+    width: 45,
+    height: 45,
   },
   clickableTabs: {
     position: "absolute",
@@ -301,18 +333,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
     opacity: 0.5,
   },
-  activeIndicator: {
-    position: "absolute",
-    bottom: -2,
-    alignSelf: "center",
-    width: 60,
-    height: 3,
-    backgroundColor: "#ff3333",
-    borderRadius: 2,
-    shadowColor: "#ff0000",
-    shadowOffset: { width: 0, height: 0 },
-    shadowOpacity: 0.8,
-    shadowRadius: 5,
+  placeholderText: {
+    color: "#fff",
+    fontSize: 16,
+    opacity: 0.5,
   }
 });
 
